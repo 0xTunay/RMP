@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="be">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fdf9f2" />
+    <title>Ратунок — карысныя месцы побач</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Ратунок">
+      <div class="app-content">
+        <section class="screen screen-home is-active" data-screen="home" aria-labelledby="home-title">
+          <header class="topbar home-topbar">
+            <a class="brand" href="#home" data-nav="home" aria-label="На галоўную">
+              <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Ратунок</span>
+            </a>
+            <button class="icon-button" type="button" data-action="notifications" aria-label="Апавяшчэнні">
+              <span class="icon icon-bell"></span>
+            </button>
+          </header>
+
+          <div class="home-intro">
+            <h1 id="home-title">Карыснае месца — побач</h1>
+            <button class="location-line" type="button" data-action="location" aria-label="Змяніць месцазнаходжанне">
+              <span class="icon icon-pin"></span>
+              <span>Брэст · Маё месцазнаходжанне</span>
+              <span class="icon icon-chevron-down"></span>
+            </button>
+            <label class="search-box">
+              <span class="icon icon-search"></span>
+              <input type="search" placeholder="Што вы шукаеце?" aria-label="Пошук карысных месцаў" data-search-input />
+            </label>
+          </div>
+
+          <div class="stitch-divider" aria-hidden="true"></div>
+
+          <section class="home-section" aria-labelledby="need-title">
+            <h2 id="need-title">Што вам патрэбна?</h2>
+            <div class="category-grid" data-category-grid></div>
+          </section>
+
+          <article class="feature-card">
+            <div class="feature-photo" role="img" aria-label="Бераг ракі ў Брэсце"></div>
+            <div class="feature-copy">
+              <h2>Брэст, у якім лягчэй арыентавацца</h2>
+              <p>Знаходзьце ваду, адпачынак і важную дапамогу там, дзе вы ёсць.</p>
+            </div>
+          </article>
+          <button class="primary-button feature-button" type="button" data-action="open-map">Адкрыць карту</button>
+        </section>
+
+        <section class="screen screen-map" data-screen="map" aria-labelledby="map-title">
+          <div class="map-stage">
+            <header class="topbar map-topbar">
+              <h1 id="map-title">Карта</h1>
+              <button class="icon-button" type="button" data-action="notifications" aria-label="Апавяшчэнні">
+                <span class="icon icon-bell"></span>
+              </button>
+            </header>
+            <label class="search-box map-search">
+              <span class="icon icon-search"></span>
+              <input type="search" placeholder="Знайсці месца побач" aria-label="Знайсці месца побач" data-map-search />
+            </label>
+            <div class="map-filters" role="group" aria-label="Фільтры карты">
+              <button class="filter-pill is-selected" type="button" data-filter="all">Усе</button>
+              <button class="filter-pill" type="button" data-filter="water"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 3c0 5-7 7-7 13a7 7 0 0 0 14 0c0-6-7-8-7-13Z"/><path d="M27 8c0 4-5 5-5 10a5 5 0 0 0 10 0c0-4-4-6-5-10Z"/></svg>Вада</button>
+              <button class="filter-pill" type="button" data-filter="wifi"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c8-7 18-7 26 0"/><path d="M8 18c5-4 11-4 16 0"/><path d="M14 24c1-1 3-1 4 0"/><circle cx="16" cy="27" r="1" fill="currentColor" stroke="none"/></svg>Wi-Fi</button>
+              <button class="filter-pill filter-icon-only" type="button" data-action="filters" aria-label="Паказаць усе фільтры" aria-expanded="false"><span class="icon icon-sliders"></span></button>
+            </div>
+            <div class="map-toggle" role="tablist" aria-label="Від карты">
+              <button class="is-active" type="button" role="tab" aria-selected="true" data-map-view="map">Карта</button>
+              <button type="button" role="tab" aria-selected="false" data-map-view="list">Спіс</button>
+            </div>
+            <div class="map-body">
+              <div class="map-canvas" role="group" aria-label="Схематычная карта побач з вуліцай Савецкай">
+                <div class="road-label road-label-a">вул. Савецкая</div>
+                <div class="road-label road-label-b">пр-т Машэрава</div>
+                <button class="map-pin pin-water" type="button" data-action="select-pin" data-pin="water" aria-label="Пітны фантанчык"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 3c0 5-7 7-7 13a7 7 0 0 0 14 0c0-6-7-8-7-13Z"/><path d="M27 8c0 4-5 5-5 10a5 5 0 0 0 10 0c0-4-4-6-5-10Z"/></svg></button>
+                <button class="map-pin pin-wifi" type="button" data-action="select-pin" data-pin="wifi" aria-label="Wi-Fi побач"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c8-7 18-7 26 0"/><path d="M8 18c5-4 11-4 16 0"/><path d="M14 24c1-1 3-1 4 0"/><circle cx="16" cy="27" r="1" fill="currentColor" stroke="none"/></svg></button>
+                <button class="map-pin pin-toilet" type="button" data-action="select-pin" data-pin="toilet" aria-label="Туалет побач"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 4h13v16H7z"/><path d="M10 20v5c0 4 3 6 7 6h7v-5h-6c-1 0-2-1-2-2v-4"/><path d="M7 25h7"/></svg></button>
+                <button class="locate-button icon-button" type="button" data-action="locate" aria-label="Маё месцазнаходжанне"><span class="icon icon-target"></span></button>
+              </div>
+              <div class="map-card" data-map-card>
+              <div class="map-card-heading">
+                <div class="category-tile"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 3c0 5-7 7-7 13a7 7 0 0 0 14 0c0-6-7-8-7-13Z"/><path d="M27 8c0 4-5 5-5 10a5 5 0 0 0 10 0c0-4-4-6-5-10Z"/></svg></div>
+                <div>
+                  <h2>Пітны фантанчык</h2>
+                  <p>вул. Савецкая · 350 м · 5 хв пешшу</p>
+                </div>
+                <span class="status-label">Адкрыта</span>
+              </div>
+              <button class="primary-button" type="button" data-action="view-place" aria-expanded="false">Паглядзець аб’ект</button>
+              <div class="place-details is-hidden" data-place-details>
+                <p>Адрас: вул. Савецкая, 58</p>
+                <p>350 м · 5 хв пешшу</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen screen-favorites" data-screen="favorites" aria-labelledby="favorites-title">
+          <header class="page-heading">
+            <h1 id="favorites-title">Абранае</h1>
+            <p>Захоўвайце месцы, каб вярнуцца да іх пазней.</p>
+          </header>
+          <div class="favorite-list" data-favorite-list>
+            <article class="favorite-card" data-favorite-item>
+              <div class="category-tile"><svg class="category-icon-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 3c0 5-7 7-7 13a7 7 0 0 0 14 0c0-6-7-8-7-13Z"/><path d="M27 8c0 4-5 5-5 10a5 5 0 0 0 10 0c0-4-4-6-5-10Z"/></svg></div>
+              <div class="favorite-info">
+                <h2>Пітны фантанчык</h2>
+                <p>вул. Савецкая, 58 · 350 м</p>
+              </div>
+              <button class="favorite-button is-liked" type="button" data-action="toggle-favorite" aria-label="Выдаліць з абранага"><svg class="svg-icon heart-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-heart"></use></svg></button>
+            </article>
+          </div>
+          <div class="empty-state is-hidden" data-favorite-empty>
+            <div class="empty-icon"><span class="icon icon-heart"></span></div>
+            <h2>Тут пакуль пуста</h2>
+            <p>Захоўвайце карысныя месцы, каб яны заўсёды былі пад рукой.</p>
+            <button class="outline-button" type="button" data-action="restore-favorite">Вярнуць у абранае</button>
+          </div>
+        </section>
+
+        <section class="screen screen-profile" data-screen="profile" aria-labelledby="profile-title">
+          <header class="page-heading profile-heading">
+            <h1 id="profile-title">Профіль і налады</h1>
+          </header>
+          <article class="profile-card">
+            <div class="profile-avatar"><span class="icon icon-user"></span></div>
+            <h2>Ваш Ратунок</h2>
+            <p>Далучайцеся, каб дапамагаць удакладняць карысныя месцы.</p>
+            <button class="outline-button" type="button" data-action="register">Далучыцца</button>
+          </article>
+          <section class="settings-section" aria-labelledby="settings-title">
+            <h2 id="settings-title">Налады</h2>
+            <div class="settings-list">
+              <button class="settings-row" type="button" data-action="language">
+                <span>Мова інтэрфейсу</span><span class="row-value">Беларуская · Русский</span>
+              </button>
+              <button class="settings-row" type="button" data-action="geolocation">
+                <span>Геалакацыя</span><span class="icon icon-chevron-right"></span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <section class="screen screen-location" data-screen="location" aria-labelledby="location-title">
+          <div class="centered-state">
+            <div class="large-state-icon"><span class="icon icon-location-off"></span></div>
+            <h1 id="location-title">Геалакацыя недаступная</h1>
+            <p>Дазвольце доступ да месцазнаходжання ў наладах або выберыце пачатковую кропку ўручную.</p>
+            <button class="primary-button" type="button" data-action="choose-location">Выбраць пачатковую кропку</button>
+            <button class="text-button" type="button" data-nav="map">Вярнуцца да карты</button>
+          </div>
+        </section>
+
+        <section class="screen screen-register" data-screen="register" aria-labelledby="register-title">
+          <button class="back-button icon-button" type="button" data-action="back" aria-label="Назад"><span class="icon icon-arrow-left"></span></button>
+          <div class="centered-state register-state">
+            <div class="large-state-icon"><span class="icon icon-users"></span></div>
+            <h1 id="register-title">Далучайцеся да Ратунка</h1>
+            <p>Публічны профіль дапамагае захоўваць абраныя месцы і дасылаць карысныя ўдакладненні без пароля.</p>
+            <button class="primary-button" type="button" data-action="guest-register">Працягнуць без рэгістрацыі</button>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="toast" role="status" aria-live="polite" data-toast></div>
+      <nav class="bottom-nav" aria-label="Асноўная навігацыя">
+        <button class="nav-item is-active" type="button" data-nav="home"><span class="icon icon-home"></span><span>Галоўная</span></button>
+        <button class="nav-item" type="button" data-nav="map"><span class="icon icon-map"></span><span>Карта</span></button>
+        <button class="nav-item" type="button" data-nav="favorites"><svg class="svg-icon nav-heart-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-heart"></use></svg><span>Абранае</span></button>
+        <button class="nav-item" type="button" data-nav="profile"><span class="icon icon-user"></span><span>Профіль</span></button>
+      </nav>
+    </main>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9Z"/><path d="M10 21h4"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="icon-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15M15 6v15"/></symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M8 4v4M16 10v4M10 16v4"/></symbol>
+      <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="9"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></symbol>
+      <symbol id="icon-location-off" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 12-6"/><path d="M8.5 8.5A3.5 3.5 0 0 0 12 13c.6 0 1.2-.2 1.7-.4"/><path d="m3 3 18 18"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M17 14a6 6 0 0 1 5 7"/></symbol>
+      <symbol id="icon-water" viewBox="0 0 32 32"><path d="M13 3c0 5-7 7-7 13a7 7 0 0 0 14 0c0-6-7-8-7-13Z"/><path d="M27 8c0 4-5 5-5 10a5 5 0 0 0 10 0c0-4-4-6-5-10Z"/></symbol>
+      <symbol id="icon-wifi" viewBox="0 0 32 32"><path d="M3 12c8-7 18-7 26 0M8 18c5-4 11-4 16 0M14 24c1-1 3-1 4 0"/><circle cx="16" cy="27" r="1" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-toilet" viewBox="0 0 32 32"><path d="M7 4h13v16H7zM10 20v5c0 4 3 6 7 6h7v-5h-6c-1 0-2-1-2-2v-4M7 25h7"/></symbol>
+      <symbol id="icon-rest" viewBox="0 0 32 32"><path d="M5 28c0-7 5-11 11-11s11 4 11 11M16 4c-2 4-5 5-5 9a5 5 0 0 0 10 0c0-4-3-5-5-9Z"/></symbol>
+      <symbol id="icon-medical" viewBox="0 0 32 32"><path d="M4 17c0-7 6-10 12-4 6-6 12-3 12 4 0 5-6 9-12 13C10 26 4 22 4 17Z"/><path d="M8 18h5l2-5 3 8 2-3h4"/></symbol>
+      <symbol id="icon-safety" viewBox="0 0 32 32"><path d="M16 3c4 4 8 4 11 5v8c0 7-5 12-11 15C10 28 5 23 5 16V8c3-1 7-1 11-5Z"/><path d="m11 17 3 3 6-7"/></symbol>
+      <symbol id="icon-help" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="5"/><path d="m7 7 5 5m7 7 6 6m0-18-6 6M12 20l-5 5"/></symbol>
+    </svg>
+    <script src="app.js"></script>
+  </body>
+</html>
